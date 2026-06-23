@@ -20,8 +20,8 @@ jobs:
       - name: Build the image with layer caching
         uses: docker/build-push-action@v7
         with:
+          context: .
           push: false
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:buildcache
-          cache-to: type=registry,ref=user/app:buildcache,mode=max
+          cache-from: type=registry,ref=abstergo07/my-local-app:buildcache
+          cache-to: type=registry,ref=abstergo07/my-local-app:buildcache,mode=max
 
